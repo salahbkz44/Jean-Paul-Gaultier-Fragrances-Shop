@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inscription</title>
+    <link rel="stylesheet" href="page.css" />
+    <!--<script src="validation.js"></script>-->
+    <style>
+      .login,
+      input[type="reset"] {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        height: 51px;
+      }
+
+      body {
+        background-image: url("image bg/loginbg.jpg");
+        background-position: center;
+      }
+      table {
+        margin-top: 2%;
+        margin-left: 63%;
+        background-color: white;
+        width: 28%;
+        height: 100%;
+        padding: 60px;
+      }
+      td {
+        text-align: left;
+      }
+      h1 {
+        color: black;
+        text-align: left;
+        font-size: 60px;
+        font-weight: 900;
+      }
+      h2 {
+        margin-left: 15%;
+        margin-right: 0;
+
+        font-size: 40px;
+        text-align: left;
+      }
+      a {
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+        letter-spacing: -1.1px;
+        text-decoration: none;
+        color: grey;
+        padding: 0;
+
+        letter-spacing: 0;
+      }
+      a:hover {
+        color: black;
+      }
+      pre {
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+      }
+      div {
+        display: inline;
+        margin: 0;
+      }
+      ::placeholder {
+        text-indent: 20px;
+        color: black;
+        font-weight: 600;
+      }
+      textarea::placeholder {
+        transform: translateY(70%);
+      }
+      textarea,
+      input[type="tel"],
+      select,
+      input[type="number"],
+      input[type=text],
+      input[type="email"],
+      input[type="password"] {
+        color: black;
+        text-indent: 20px;
+        padding: 0;
+        border: 1px solid black;
+        height: 40px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      input[type="radio"] + label {
+        margin: 10px;
+        padding: 5px 30px;
+        border: 2px solid black;
+        float: right;
+      }
+      input[type="radio"]:checked + label {
+        margin: 10px;
+        color: white;
+        background-color: black;
+        padding: 5px 30px;
+        border: 2px solid black;
+        float: right;
+      }
+      
+
+    </style>
+  </head>
+  <body>
+    <a href="index.html">
+    <img src="image/logo.png" alt="">
+    </a>
+    <form action="inscription.php" method="post">
+      <table width="50%">
+        <tr>
+          <td colspan="2"><h1>WELCOME <br> SIGN UP
+          </h1></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <h4>
+              <pre><a href="login.html">LOGIN</a> | REGISTER</pre>
+            </h4>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <h6 style="display: inline-block;font-size:12px">PERSONAL INFORMATION</h6>
+            
+            <input type="radio" name="sexe" id="femme" value="femme" />
+            <label for="femme">MRS</label>
+            <input type="radio" name="sexe" id="homme" value="homme" checked/>
+            <label for="homme">MR</label>
+          </td>
+        </tr>
+        <tr>
+          <td><input placeholder="FAMILY NAME *" type="text" name="nom" /></td>
+        </tr>
+        <tr>
+          <td id="nom_val"colspan="2" style="color: red;""></td>
+        </tr>
+        <tr>
+          <td><input placeholder="FIRST NAME *" type="text" name="prenom" /></td>
+          
+        </tr>
+        <tr>
+          <td id="prenom_val"colspan="2" style="color: red;""></td>
+        </tr>
+        <tr>
+          <td><input placeholder="AGE *" type="number" min="1" max="100" name="age" /></td>
+          
+        </tr>
+        <tr>
+          <td id="age_val"colspan="2" style="color: red;""></td>
+        </tr>
+        <tr>
+          <td>
+            <select name="wilaya" id="">
+              <option value="WILAYA" selected>WILAYA</option>
+              <option value="alger">BATNA</option>
+              <option value="alger">COSTANTINE</option>
+              <option value="alger">ORAN</option>
+              <option value="alger">ANNABA</option>
+              <option value="alger">TELEMCAN</option>
+              <option value="setif">SETIF</option>
+              <option value="alger">ALGER</option>
+              <option value="djelfa">DJELFA</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="PHONE NUMBER *" type="tel" name="tel" pattern="0{1}[5-7]{1}[0-9]{8}" required />
+          </td>
+        </tr>
+        <tr>
+          <td><input placeholder="EMAIL *" type="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td id="email_val"colspan="2" style="color: red;""></td>
+        </tr>
+        <tr>
+          <td><textarea placeholder="ADRESSE *" name="adr" id="" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+          <td id="adresse_val"colspan="2" style="color: red;""></td>
+        </tr>
+        <tr>
+          <td><input placeholder="PASSWORD *" type="password" name="password" /></td>
+        </tr>
+        <tr>
+          <td id="password_val" colspan="2" style="color: red;""></td>
+        </tr>
+        <tr>
+          <td><input placeholder="CONFIRM PASSWORD *" type="password" name="confirmPassword" id="" /></td>
+          
+        </tr>
+        <tr>
+          <td id="confirmPassword_val"colspan="2" style="color: red;""></td>
+        </tr>
+        
+        <tr>
+          <td colspan="2" >
+             <div>
+              <input
+                class="login"
+                style="background-color: black"
+                type="submit"
+                value="Envoyer"
+                onclick="validation_login()"
+                onmouseover="this.style.backgroundColor='white'"
+                onmouseout="this.style.backgroundColor='black'"
+              />
+            </div>
+            <div>
+              <input type="reset" value="Effacer" />
+            </div>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
