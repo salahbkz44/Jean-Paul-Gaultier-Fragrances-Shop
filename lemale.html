@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>commande</title>
+  <link rel="stylesheet" href="page.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+  <style>
+    input[type="radio"] + label {
+  border: 2px solid black;
+}
+
+/* Style the label when the radio button is checked */
+input[type="radio"]:checked + label {
+  background-color: black; /* Background color of the box when checked */
+  color: white;
+}
+input[type="radio"]:hover + label {
+  background-color: black; /* Background color of the box when checked */
+  color: white;
+}
+input[type="submit"] {
+  background-color: black;
+  color: white;
+}
+input[type="number"] {
+  border: 2px solid black; /* Border style */
+  color: black; /* Text color */
+}
+    body {
+      background-image: url("image bg/le\ male\ bg.jpg");
+      color: black;
+    }
+    table {
+      margin-top: 40px;
+      background-color: #87b4bf;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html">
+  <img class="logo" src="image/logo.png" alt="" />
+  </a>
+  <table cellspacing="10px">
+    <tr>
+      <td width="50%" rowspan="6" style="text-align: center">
+        <img width="100%" class="product" src="products/Le_Male_produit-removebg-preview.png" alt="" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <h1 id="heading">LE MALE</h1>
+        <h3>EAU DE TOILETTE</h3>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <form action="commande.php" method="post">
+          <div>
+          <div>
+          <h4>65$</h4>
+          <input type="radio" name="size" id="40ml" value="40ml"/>
+          <label for="40ml">40ML</label>
+          </div>
+          <div >
+          <h4>95$</h4>
+          <input type="radio" name="size" id="70ml" value="70ml"/>
+          <label for="70ml">70ML</label>
+          </div>
+          </div>
+          <div>
+          <div>
+          <h4>120$</h4>
+          <input type="radio" name="size" id="120ml" value="120ml"/>
+          <label for="120ml">120ML</label>
+          </div>
+          <div>
+          <h4>155$</h4>
+          <input type="radio" name="size" id="200ml" value="200ml"/>
+          <label for="200ml">200ML</label>
+          </div>
+          </div>
+      </td>
+    </tr>
+    <tr>
+      
+    </tr>
+    <tr>
+      <td><h3>QUANTITÉ</h3></td>
+      <td>
+        <input name="qte" type="number" />
+      </td>
+    </tr>
+    <input type="hidden" name="price" id="selected_price">
+    <input type="hidden" name="nom" id="h1_value">
+    <tr>
+      <td colspan="2">
+        <input type="submit" value="commander"  />
+      </td>
+    </tr>
+    
+    </form>
+  </table>
+ <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var submitButton = document.querySelector('input[type="submit"]');
+    submitButton.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+      
+      var selectedPrice = document.querySelector('input[name="size"]:checked').previousElementSibling.innerText;
+      document.getElementById("selected_price").value = selectedPrice;
+      
+      var h1Value = document.getElementById("heading").innerText;
+      document.getElementById("h1_value").value = h1Value;
+      
+      // Submit the form programmatically
+      document.querySelector("form").submit();
+    });
+  });
+</script>
+
+
+  <!--onclick="validation_Commande()-->
+  <!--<script src="validation.js"></script>-->
+</body>
+</html>
